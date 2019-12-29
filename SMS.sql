@@ -17,7 +17,7 @@ create table Student(
 	Contact_2 varchar(60),
 	Current_Address varchar(60),
 	permanent_Address varchar(60),
-	ProfileImage image
+	Profile_Image image
 );
 create table Teacher(
 	Teacher_Id varchar(60) primary key,
@@ -28,7 +28,7 @@ create table Teacher(
 	Contact_2 varchar(60),
 	Current_Address varchar(60),
 	permanent_Address varchar(60),
-	ProfileImage image
+	Profile_Image image
 );
 create table Staff(
 	Staff_Id varchar(60) primary key,
@@ -39,7 +39,28 @@ create table Staff(
 	Contact_2 varchar(60),
 	Current_Address varchar(60),
 	permanent_Address varchar(60),
-	ProfileImage image
+	Profile_Image image
 
 );
-create table 
+create table ClassesList(
+	Class_Id varchar(60) primary key,
+	Class_Name varchar(60),
+	Class_Fee int
+
+)
+create table SubjectList(
+	Subject_Id varchar(60),
+	Subject_Name varchar(60),
+)
+create table Fee(
+	Fee_Id varchar(60) primary key,
+	Student_Id varchar(60) foreign key references Student(Student_Id),
+	Class_Fee int foreign key references ClassesList(Class_Fee)
+	Discount int
+)
+create table GenerateStudentFeeChallan(
+	Challan_Id varchar(60) primary key,
+	Student_Id varchar(60) foreign key references Student(Student_Id),
+	Fee_Id varchar(60) foreign key references Fee(Fee_Id),
+
+)

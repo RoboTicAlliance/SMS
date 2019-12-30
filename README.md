@@ -20,7 +20,7 @@ its School Management System
 
 ----------------------------------Special Thanks-----------------------------
 
-to Our Hard working Developer team and other people who are indirectly attached to this project.
+to Our Hard working Developer team and other people who are directly or indirectly attached to this project.
 
 
 
